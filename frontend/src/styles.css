@@ -19,7 +19,7 @@ button:disabled { cursor: not-allowed; opacity: .5; }
 .preview { min-height: calc(100vh - 56px); padding: 18px; }
 .preview-head { display: flex; justify-content: space-between; align-items: center; padding: 0 12px 12px; color: #6e685f; font-size: 13px; }
 .preview-head p { margin: 0; }
+.download-button { margin-top: 0; padding: 9px 13px; font-size: 12px; }
 iframe { display: block; width: 100%; height: calc(100vh - 130px); min-height: 700px; border: 1px solid rgba(36,34,31,.13); border-radius: 12px; background: #e8e0d2; }
 @media (max-width: 980px) { .shell { grid-template-columns: 1fr; } .panel { position: static; } .preview { min-height: auto; } }
 @media (max-width: 560px) { .shell { padding: 14px; } .panel, .preview { padding: 20px; } .grid { grid-template-columns: 1fr; } }
-

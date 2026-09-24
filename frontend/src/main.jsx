@@ -16,6 +16,34 @@ function App() {
     setForm({ ...form, [event.target.name]: event.target.value });
   }
 
+  function downloadPortfolio() {
+    if (!portfolioHtml) {
+      setStatus("Generate a portfolio before downloading HTML.");
+      return;
+    }
+
+    try {
+      const candidateName = typeof profile?.name === "string" ? profile.name.trim() : "";
+      const safeName = candidateName
+        .replace(/[<>:"/\\|?*\u0000-\u001f]/g, "_")
+        .replace(/\s+/g, "_")
+        .replace(/^\.+|\.+$/g, "")
+        .replace(/^_+|_+$/g, "");
+      const filename = `${safeName || "Generated_Portfolio"}_Portfolio.html`;
+      const blob = new Blob([portfolioHtml], { type: "text/html;charset=utf-8" });
+      const objectUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = objectUrl;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(objectUrl), 0);
+    } catch (error) {
+      setStatus(error instanceof Error ? `Download failed: ${error.message}` : "Download failed.");
+    }
+  }
+
   async function submit(event) {
     event.preventDefault();
     setStatus("");
@@ -71,7 +99,14 @@ function App() {
         </form>
       </section>
       <section className="preview">
-        <div className="preview-head"><p className="eyebrow">PREVIEW</p><span>Approved template</span></div>
+        <div className="preview-head">
+          <p className="eyebrow">PREVIEW</p>
+          {portfolioHtml && (
+            <button className="download-button" type="button" onClick={downloadPortfolio} disabled={isSubmitting}>
+              Download HTML
+            </button>
+          )}
+        </div>
         <iframe
           title="Generated portfolio preview"
           srcDoc={portfolioHtml}
