@@ -1,0 +1,9 @@
+fastapi
+jinja2
+google-genai
+pydantic
+pydantic-settings
+python-docx
+python-dotenv
+python-multipart
+pypdf

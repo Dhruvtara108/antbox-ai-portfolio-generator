@@ -25,10 +25,17 @@ The API health check is available at `http://localhost:8000/health`. The fronten
 
 Copy `.env.example` to `.env` and set `GEMINI_API_KEY`. The backend also reads the existing workspace-level `.env` for local development; the key is never sent to the frontend.
 
+## Deploy to Vercel
+
+Use the repository root as the Vercel project root. `vercel.json` runs
+`npm --prefix frontend run build` and publishes `frontend/dist`. The FastAPI
+entrypoint is `api/index.py`, so production API requests use the same-origin
+pattern `/api/health` and `/api/generate-portfolio`. Set `GEMINI_API_KEY` as a
+Vercel server-side environment variable; do not add it to frontend variables.
+
 ## Current scope
 
 - `/health` is implemented.
 - `/generate-portfolio` extracts PDF/DOCX text, sends evidence to Gemini, and validates a `CandidateProfile`.
 - The approved template is served at `/template.html` for preview.
 - Dynamic injection, persisted portfolios, downloads, and sharing are intentionally not implemented yet.
-

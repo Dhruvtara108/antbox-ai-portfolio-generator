@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
 
-const API_URL = "http://localhost:8000";
+const API_URL = import.meta.env.DEV ? "http://localhost:8000" : "/api";
 
 function App() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", location: "", role: "" });
