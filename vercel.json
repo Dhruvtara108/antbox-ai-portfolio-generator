@@ -1,5 +1,18 @@
 {
   "buildCommand": "npm --prefix frontend run build",
   "installCommand": "npm --prefix frontend install && python -m pip install -r requirements.txt",
-  "outputDirectory": "frontend/dist"
+  "outputDirectory": "frontend/dist",
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.py"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
