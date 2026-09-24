@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhruv — Operations Associate | Connectivity Portfolio</title>
+<meta name="description" content="Role-focused portfolio for Dhruv, tailored toward Light's Operations Associate — Connectivity role.">
+<style>
+:root{
+  --bg:#E8E0D2;
+  --surface:#F3EDE3;
+  --surface-2:#DDD3C4;
+  --ink:#24221F;
+  --muted:#6E685F;
+  --lav:#8D7A9F;
+  --lav-dark:#6F5C7E;
+  --olive:#68705D;
+  --line:rgba(36,34,31,.13);
+  --white:#FFFDF8;
+  --shadow:0 18px 45px rgba(63,53,42,.10);
+  --radius:20px;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:"Century Gothic","CenturyGothic","AppleGothic",Arial,sans-serif;
+line-height:1.55;overflow-x:hidden}
+a{color:inherit;text-decoration:none}.container{width:min(1160px,92%);margin:auto}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;
+background:rgba(232,224,210,.78);backdrop-filter:blur(18px);
+border-bottom:1px solid transparent;transition:.35s}nav.scrolled{
+background:rgba(232,224,210,.95);border-color:var(--line)}
+.navin{height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:-.04em}.logo span{color:var(--lav)}
+.navlinks{display:flex;gap:24px;color:var(--muted);font-size:14px}.navlinks a:hover{color:white}
+.hero{min-height:100vh;display:grid;align-items:center;padding:120px 0 70px}
+.gridhero{display:grid;grid-template-columns:1.3fr .7fr;gap:50px;align-items:center}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(94,231,242,.24);background:rgba(94,231,242,.06);padding:8px 12px;border-radius:999px;color:var(--lav);font-size:13px;font-weight:700}
+h1{font-size:clamp(52px,8vw,92px);line-height:.94;letter-spacing:-.075em;margin:22px 0}
+.gradient{color:var(--lav-dark)}
+.hero p{font-size:20px;color:var(--muted);max-width:720px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{padding:13px 18px;border-radius:13px;border:1px solid var(--line);background:var(--panel);font-weight:700}.btn.primary{background:linear-gradient(135deg,var(--lav),var(--lav2));color:#111114;border:0}
+.profile-card{background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:32px;padding:28px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.profile-card:after{content:"";position:absolute;width:220px;height:220px;background:var(--lav);filter:blur(90px);opacity:.12;right:-70px;top:-80px}
+.avatar{height:110px;width:110px;border-radius:28px;display:grid;place-items:center;font-size:38px;font-weight:900;background:linear-gradient(135deg,var(--lav),var(--lav2));color:#07111f;margin-bottom:24px}
+.mini{color:var(--muted);font-size:14px}.role{font-size:24px;font-weight:800;margin:4px 0 8px}.tagrow{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}.tag{font-size:12px;padding:6px 9px;border-radius:999px;background:#1b1a21;border:1px solid var(--line);color:#c9d8e9}
+section{padding:95px 0}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:35px}h2{font-size:42px;letter-spacing:-.05em;margin:0}.section-head p{max-width:570px;color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:rgba(13,27,45,.82);border:1px solid var(--line);border-radius:var(--radius);padding:25px;box-shadow:0 15px 40px rgba(0,0,0,.16)}.card h3{margin:0 0 10px;font-size:20px}.card p{color:var(--muted);margin:0}.icon{font-size:25px;margin-bottom:16px}
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:18px}.match{padding:24px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(94,231,242,.06),rgba(167,139,250,.04))}
+.match .top{display:flex;justify-content:space-between;align-items:center;gap:15px}.match h3{margin:0}.pill{font-size:11px;padding:5px 8px;border-radius:999px;font-weight:800;background:rgba(99,230,190,.12);color:var(--green);border:1px solid rgba(99,230,190,.22)}
+.bar{height:7px;background:#24232a;border-radius:99px;overflow:hidden;margin:15px 0 8px}.fill{height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--lav),var(--lav2))}
+.match p{color:var(--muted);font-size:14px;margin:0}.evidence{font-size:13px;color:#d7e3f0;margin-top:12px}.evidence b{color:white}
+.timeline{position:relative;border-left:1px solid var(--line);margin-left:12px;padding-left:30px}.event{position:relative;margin-bottom:30px}.event:before{content:"";position:absolute;left:-37px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--lav);box-shadow:0 0 0 5px rgba(94,231,242,.09)}.date{font-size:12px;color:var(--lav);font-weight:800}.event h3{margin:4px 0}.event p{color:var(--muted);margin:0}
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:18px}.project{min-height:260px;border-radius:26px;padding:27px;border:1px solid var(--line);background:linear-gradient(145deg,#10243a,#0b1727)}.project .label{color:var(--lav);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.1em}.project h3{font-size:27px;margin:10px 0}.project p{color:var(--muted)}.proof{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.proof span{padding:7px 10px;border-radius:10px;background:#1b1a21;color:#cbd8e7;font-size:12px}
+.skills{display:flex;flex-wrap:wrap;gap:10px}.skill{padding:10px 13px;border-radius:13px;border:1px solid var(--line);background:#111114;color:#d9e5f1}
+.callout{margin-top:30px;padding:28px;border-radius:24px;border:1px solid rgba(94,231,242,.2);background:linear-gradient(135deg,rgba(94,231,242,.07),rgba(167,139,250,.06))}
+.callout h3{margin-top:0}.callout p{color:var(--muted)}
+footer{padding:60px 0 90px;border-top:1px solid var(--line);color:var(--muted)}footer strong{color:white}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:850px){.gridhero,.matrix,.projects,.cards{grid-template-columns:1fr}.navlinks{display:none}h2{font-size:34px}.hero{padding-top:100px}}
+
+/* SaaS portfolio motion layer */
+
+
+to{transform:translate(-45%,35px) scale(1.08)}}
+.card,.match,.project,.profile-card{
+background:rgba(243,237,227,.78);border:1px solid var(--line);
+border-radius:var(--radius);box-shadow:none;
+transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s,border-color .35s}
+.card:hover,.match:hover,.project:hover,.profile-card:hover{
+transform:translateY(-5px);border-color:rgba(36,34,31,.25);
+box-shadow:0 18px 45px rgba(63,53,42,.09)}
+.match:hover .fill{filter:brightness(1.15)}
+.gradient{background-size:180% auto;animation:shine 6s ease-in-out infinite}
+50%{background-position:100%}}
+.eyebrow{color:var(--lav);border-color:rgba(196,181,253,.22);background:rgba(196,181,253,.055)}
+.pill{color:var(--lav);background:rgba(196,181,253,.08);border-color:rgba(196,181,253,.18)}
+.date{color:var(--lav)}
+.avatar{box-shadow:0 0 50px rgba(196,181,253,.14)}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Refined motion system */
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--lav-dark);z-index:1000}
+.reveal{opacity:0;transform:translateY(26px);transition:
+opacity .75s cubic-bezier(.22,1,.36,1),
+transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.show{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.07s}
+.reveal:nth-child(3){transition-delay:.14s}
+.reveal:nth-child(4){transition-delay:.21s}
+.reveal:nth-child(5){transition-delay:.28s}
+.cursor-dot{position:fixed;width:8px;height:8px;border-radius:50%;
+background:var(--lav-dark);pointer-events:none;z-index:999;opacity:0;
+transform:translate(-50%,-50%);transition:opacity .2s;mix-blend-mode:multiply}
+.logo,.brand{color:var(--ink)}
+.navlinks a{transition:color .25s}.navlinks a:hover{color:var(--lav-dark)}
+.eyebrow{color:var(--olive);background:transparent;border:0;border-left:2px solid var(--lav-dark);
+border-radius:0;padding:2px 0 2px 10px}
+.pill{color:var(--olive);background:rgba(104,112,93,.08);border:0}
+.tag{background:var(--surface-2);color:#504A43;border:0}
+.bar{background:#D5CABC}.fill{background:var(--ink)}
+.icon{font-size:10px;letter-spacing:.12em;color:var(--lav-dark);font-weight:700;margin-bottom:16px}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<nav><div class="container navin"><div class="logo">DHRUV<span>.</span></div><div class="navlinks">
+<a href="#fit">Role fit</a><a href="#experience">Experience</a><a href="#projects">Systems</a><a href="#skills">Toolkit</a>
+</div></div></nav>
+
+<header class="hero"><div class="container gridhero">
+<div class="reveal">
+<div class="eyebrow">OPERATIONS ASSOCIATE  /  CONNECTIVITY</div>
+<h1>Connectivity<br><span class="gradient">operations.</span></h1>
+<p>Final-year Computer Science engineer with hands-on experience across REST APIs, backend workflows, financial applications, SQL and production systems. Built to investigate data-flow issues, validate what actually landed, and turn technical findings into clear operational understanding.</p>
+
+</div>
+<div class="profile-card reveal">
+<div class="avatar">D</div><div class="mini">BASED IN INDIA • KIIT UNIVERSITY</div>
+<div class="role">Dhruv Mishra</div>
+<div class="mini">Connectivity Operations · APIs · Data · Debugging</div>
+<div class="tagrow"><span class="tag">REST APIs</span><span class="tag">SQL</span><span class="tag">JavaScript</span><span class="tag">Fintech</span><span class="tag">Debugging</span><span class="tag">CI/CD</span></div>
+</div>
+</div></header>
+
+<section id="fit"><div class="container">
+<div class="section-head reveal"><div><div class="eyebrow">LIGHT ROLE ALIGNMENT</div><h2>Built around the work connectivity requires</h2></div><p>Light's Connectivity team sits between systems, data and operations. Dhruv's strongest overlap is in understanding APIs, tracing backend behaviour, validating data and debugging production workflows.</p></div>
+<div class="matrix">
+<div class="match reveal"><div class="top"><h3>REST APIs & backend workflows</h3><span class="pill">DIRECT EVIDENCE</span></div><div class="bar"><div class="fill" style="width:95%"></div></div><p>Built production analytics using Django + REST APIs and designed REST APIs for AI hiring workflows.</p><div class="evidence"><b>Proof:</b> Duckietown · NexusHire</div></div>
+<div class="match reveal"><div class="top"><h3>SQL & data verification</h3><span class="pill">DIRECT EVIDENCE</span></div><div class="bar"><div class="fill" style="width:92%"></div></div><p>Used SQL in fintech and enterprise systems; optimized queries through indexing and restructuring.</p><div class="evidence"><b>Proof:</b> Faxis · Tata Steel</div></div>
+<div class="match reveal"><div class="top"><h3>Debugging & failure isolation</h3><span class="pill">DIRECT EVIDENCE</span></div><div class="bar"><div class="fill" style="width:90%"></div></div><p>Debugged authentication, dependency and deployment workflows and resolved engineering issues through production development practices.</p><div class="evidence"><b>Proof:</b> Duckietown · Git/Jira/CI/CD</div></div>
+<div class="match reveal"><div class="top"><h3>Financial data workflows</h3><span class="pill">RELEVANT</span></div><div class="bar"><div class="fill" style="width:78%"></div></div><p>Built a production budget calculator and worked on financial computation workflows with type-safe validation.</p><div class="evidence"><b>Proof:</b> Faxis fintech platform</div></div>
+<div class="match reveal"><div class="top"><h3>JavaScript & transformations</h3><span class="pill">DIRECT EVIDENCE</span></div><div class="bar"><div class="fill" style="width:82%"></div></div><p>JavaScript frontend development with React/eCharts; experience working across backend-to-frontend data flows.</p><div class="evidence"><b>Proof:</b> Duckietown · NexusHire</div></div>
+<div class="match reveal"><div class="top"><h3>Documentation & stakeholder translation</h3><span class="pill">DEVELOPING</span></div><div class="bar"><div class="fill" style="width:62%"></div></div><p>Distributed-team collaboration, code reviews and structured engineering workflows provide a base for translating technical findings into operational documentation.</p><div class="evidence"><b>Positioning:</b> Transferable strength — avoid overstating prior SOP ownership.</div></div>
+</div>
+
+</div></section>
+
+<section id="experience"><div class="container">
+<div class="section-head reveal"><div><div class="eyebrow">PRODUCTION EXPERIENCE</div><h2>Evidence over buzzwords.</h2></div><p>Selected experiences reframed around the operational capabilities most relevant to connectivity work.</p></div>
+<div class="timeline">
+<div class="event reveal"><div class="date">MAR 2026 — PRESENT · REMOTE</div><h3>Software Engineering Intern · Duckietown Robotics</h3><p>Architected and shipped a production analytics dashboard connecting a Django backend with a JavaScript/eCharts frontend to deliver real-time telemetry through REST APIs. Also debugged authentication, dependencies and deployment workflows using django-allauth, Docker, WSL2 and CI/CD.</p></div>
+<div class="event reveal"><div class="date">JUL 2025 — SEP 2025 · REMOTE</div><h3>Full-Stack Developer Intern · Faxis</h3><p>Built and deployed a production Budget Calculator using React, Zod and SQL. Worked on financial computation workflows and type-safe validation to maintain data integrity across a CI/CD-deployed SaaS platform.</p></div>
+<div class="event reveal"><div class="date">MAY 2025 — JUN 2025 · REMOTE</div><h3>Full-Stack Developer Intern · Tata Steel</h3><p>Developed backend services using ASP.NET Core and SQL, integrating GCP BigQuery datasets for industrial data management. Optimized SQL through indexing and query restructuring, reducing manual data-processing effort by approximately 22%.</p></div>
+</div></div></section>
+
+<section id="projects"><div class="container">
+<div class="section-head reveal"><div><div class="eyebrow">SELECTED PROJECTS</div><h2>Systems experience that transfers to connectivity.</h2></div><p>Projects that help demonstrate API design, structured data, workflow automation and integration thinking.</p></div>
+<div class="projects">
+<div class="project reveal"><div class="label">AI + API WORKFLOWS</div><h3>NexusHire</h3><p>An AI hiring intelligence platform with FastAPI, Python, React, Agentic AI and GitHub API. Built REST APIs and backend workflows for resume parsing, candidate scoring and structured recruiter insights.</p><div class="proof"><span>FastAPI</span><span>REST APIs</span><span>GitHub API</span><span>Backend workflows</span></div></div>
+<div class="project reveal"><div class="label">AUTOMATED INTEGRATION</div><h3>Arogyam</h3><p>A full-stack emergency healthcare platform integrating AI workflows with the WhatsApp Business API. Built automated routing logic connecting critical cases with hospitals, ambulances and caregivers based on severity.</p><div class="proof"><span>Node.js</span><span>API integration</span><span>Automation</span><span>Workflow logic</span></div></div>
+</div></div></section>
+
+<section id="skills"><div class="container">
+<div class="section-head reveal"><div><div class="eyebrow">OPERATIONS TOOLKIT</div><h2>Technical depth. Operational mindset.</h2></div><p>A compact skill stack for investigating, validating and communicating system behaviour.</p></div>
+<div class="cards">
+<div class="card reveal"><div class="icon">01</div><h3>Connectivity</h3><p>REST APIs · Authentication exposure · Backend workflows · GitHub API · WhatsApp Business API · HTTP-oriented systems</p></div>
+<div class="card reveal"><div class="icon">02</div><h3>Data</h3><p>SQL Server · MongoDB · BigQuery · DBMS · Data validation · Query optimization · Financial computation workflows</p></div>
+<div class="card reveal"><div class="icon">03</div><h3>Engineering Ops</h3><p>Debugging · Docker · CI/CD · Git/GitHub · Jira workflows · Code reviews · Dependency & deployment troubleshooting</p></div>
+</div>
+<div class="skills reveal" style="margin-top:20px">
+<span class="skill">Python</span><span class="skill">JavaScript</span><span class="skill">C#</span><span class="skill">C++</span><span class="skill">FastAPI</span><span class="skill">ASP.NET Core</span><span class="skill">Node.js</span><span class="skill">React</span><span class="skill">SQL</span><span class="skill">BigQuery</span><span class="skill">Docker</span><span class="skill">CI/CD</span><span class="skill">Git</span><span class="skill">Linux</span>
+</div>
+</div></section>
+
+<section><div class="container">
+<div class="section-head reveal"><div><div class="eyebrow">WORKING STYLE</div><h2>Soft skills that matter in operations.</h2></div><p>These are grounded in the candidate's documented team and engineering experience, rather than generic personality claims.</p></div>
+<div class="cards">
+<div class="card reveal"><div class="icon">01</div><h3>Structured problem solving</h3><p>Breaks complex technical problems into backend, data, dependency and deployment layers to isolate issues.</p></div>
+<div class="card reveal"><div class="icon">02</div><h3>Detail orientation</h3><p>Experience with type-safe validation, SQL optimization and production workflows points to a data-integrity-first approach.</p></div>
+<div class="card reveal"><div class="icon">03</div><h3>Cross-functional collaboration</h3><p>Worked with distributed engineering teams through Git workflows, Jira pull requests, code reviews and merge-conflict resolution.</p></div>
+<div class="card reveal"><div class="icon">04</div><h3>Learning agility</h3><p>Experience spans fintech, enterprise systems, robotics, AI and full-stack engineering — useful for learning unfamiliar connectivity systems.</p></div>
+<div class="card reveal"><div class="icon">05</div><h3>Ownership mindset</h3><p>Has shipped production features rather than only academic prototypes, including deployment and reliability workflows.</p></div>
+<div class="card reveal"><div class="icon">06</div><h3>Technical communication</h3><p>Engineering collaboration and code-review experience provide a foundation for translating technical findings into clear operational guidance.</p></div>
+</div>
+</div></section>
+
+<section id="contact"><div class="container">
+<div class="callout reveal" style="text-align:center;padding:48px">
+<div class="eyebrow">CONNECTIVITY OPERATIONS</div>
+<h2 style="margin:18px 0 10px">Build. Investigate. Validate. Explain.</h2>
+<p style="max-width:700px;margin:0 auto 24px">Backend engineering depth, API experience, SQL fluency and fintech exposure — applied to the operational question at the heart of connectivity: what happened, where did the data break, and how do we verify the fix?</p>
+
+</div></div></section>
+
+<footer><div class="container"><strong>Dhruv Mishra</strong> · Operations Associate — Connectivity portfolio<br><span>Role-focused portfolio · APIs · Data · Debugging · Connectivity</span></div></footer>
+
+<script>
+const progress = document.createElement('div');
+progress.className = 'progress';
+document.body.prepend(progress);
+
+const cursor = document.createElement('div');
+cursor.className = 'cursor-dot';
+document.body.appendChild(cursor);
+
+const nav = document.querySelector('nav');
+
+function scrollUI(){
+  const max = document.documentElement.scrollHeight - innerHeight;
+  progress.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + '%';
+  if(nav) nav.classList.toggle('scrolled', scrollY > 24);
+}
+addEventListener('scroll', scrollUI, {passive:true});
+scrollUI();
+
+const revealObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+if(matchMedia('(pointer:fine)').matches){
+  addEventListener('pointermove', e=>{
+    cursor.style.opacity='1';
+    cursor.style.left=e.clientX+'px';
+    cursor.style.top=e.clientY+'px';
+  });
+
+  document.querySelectorAll('.card,.match,.project,.profile-card').forEach(card=>{
+    card.addEventListener('pointermove', e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`translateY(-5px) rotateX(${y*-1.1}deg) rotateY(${x*1.1}deg)`;
+    });
+    card.addEventListener('pointerleave',()=>{
+      card.style.transform='';
+    });
+  });
+}
+</script>
+</body>
+</html>
