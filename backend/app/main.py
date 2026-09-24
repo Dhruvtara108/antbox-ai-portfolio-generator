@@ -41,8 +41,11 @@ app.include_router(portfolio_router)
 
 
 @app.get("/health")
-def health() -> dict[str, str]:
-    return {"status": "ok"}
+def health() -> dict[str, str | bool]:
+    return {
+        "status": "ok",
+        "gemini_configured": bool(settings.gemini_api_key.strip()),
+    }
 
 
 @app.get("/template.html", include_in_schema=False)
