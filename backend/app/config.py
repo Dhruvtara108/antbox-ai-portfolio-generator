@@ -15,7 +15,7 @@ load_dotenv(WORKSPACE_ROOT / ".env")
 
 class Settings(BaseSettings):
     gemini_api_key: str = Field(default="", validation_alias="GEMINI_API_KEY")
-    gemini_model: str = "gemini-2.5-flash"
+    gemini_model: str = "gemini-2.5-flash-lite"
     frontend_origin: str = "http://localhost:5173"
 
     model_config = SettingsConfigDict(extra="ignore")
