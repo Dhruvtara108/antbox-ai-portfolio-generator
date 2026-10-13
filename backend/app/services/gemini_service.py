@@ -22,7 +22,7 @@ class GeminiResponseError(RuntimeError):
 
 class GeminiService:
     def __init__(self, settings: Settings):
-        if not settings.gemini_api_key:
+        if not settings.gemini_configured:
             raise GeminiConfigurationError("GEMINI_API_KEY is not configured.")
         try:
             self._client = genai.Client(api_key=settings.gemini_api_key)

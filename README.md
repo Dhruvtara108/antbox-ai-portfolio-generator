@@ -4,18 +4,18 @@ Foundation MVP for extracting factual candidate data from a resume and joining d
 
 ## Run locally
 
-From `portfolio-generator`:
+From the repository root:
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r backend\requirements.txt
-uvicorn app.main:app --app-dir backend --reload
+```bash
+cp .env.example .env
+# Set GEMINI_API_KEY in .env, then:
+backend/.venv/bin/python -m pip install -r backend/requirements.txt
+backend/.venv/bin/python -m uvicorn app.main:app --app-dir backend --reload
 ```
 
 In a second terminal:
 
-```powershell
+```bash
 cd frontend
 npm install
 npm run dev
@@ -23,7 +23,7 @@ npm run dev
 
 The API health check is available at `http://localhost:8000/health`. The frontend is available at the Vite URL, normally `http://localhost:5173`.
 
-Copy `.env.example` to `.env` and set `GEMINI_API_KEY`. The backend also reads the existing workspace-level `.env` for local development; the key is never sent to the frontend.
+Copy `.env.example` to `.env` and set `GEMINI_API_KEY`. `GEMINI_MODEL` is optional and defaults to `gemini-3.8-flash`; set it only when a supported alternative model is required. The backend also reads the existing workspace-level `.env` at the parent directory for local development; the key is never sent to the frontend. Shell environment variables take precedence over values from either `.env` file.
 
 ## Deploy to Vercel
 

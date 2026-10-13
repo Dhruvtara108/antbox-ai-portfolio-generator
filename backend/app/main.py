@@ -44,7 +44,7 @@ app.include_router(portfolio_router)
 def health() -> dict[str, str | bool]:
     return {
         "status": "ok",
-        "gemini_configured": bool(settings.gemini_api_key.strip()),
+        "gemini_configured": settings.gemini_configured,
     }
 
 
